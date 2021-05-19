@@ -10,6 +10,7 @@ public class Tabuleiro {
     }
     
     public void movePeca(Peca peca, int x, int y) {
+        tabuleiro[peca.getX()][peca.getY()] = null;
         peca.goMover(x, y);
         tabuleiro[x][y] = peca;
     }

@@ -34,4 +34,39 @@ public class Peca {
     public int getY() {
         return y;
     }
+
+    public String toString() {
+        if(this.tipo == Tipo.PEAO)
+            if(this.cor == Cor.BRANCA)
+                return "P";
+            else
+                return "p";
+        if(this.tipo == Tipo.CAVALO)
+            if(this.cor == Cor.BRANCA)
+                return "C";
+            else
+                return "c";
+        if(this.tipo == Tipo.BISPO)
+            if(this.cor == Cor.BRANCA)
+                return "B";
+            else
+                return "b";
+        if(this.tipo == Tipo.TORRE)
+            if(this.cor == Cor.BRANCA)
+                return "T";
+            else
+                return "t";
+        if(this.tipo == Tipo.DAMA)
+            if(this.cor == Cor.BRANCA)
+                return "D";
+            else
+                return "d";
+        
+        if(this.cor == Cor.BRANCA)
+            return "R";
+        else if(this.cor == Cor.PRETA)
+            return "r";
+
+        return null;
+    }
 }

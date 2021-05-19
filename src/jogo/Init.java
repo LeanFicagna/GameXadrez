@@ -29,7 +29,7 @@ public class Init {
         tabuleiro.setPeca(new Peca(6, 7, Cor.BRANCA, Tipo.CAVALO));
         tabuleiro.setPeca(new Peca(7, 7, Cor.BRANCA, Tipo.TORRE));
         for(int i = 0; i < 8; i++) {
-            tabuleiro.setPeca(new Peca(i, 6, Cor.PRETA, Tipo.PEAO));
+            tabuleiro.setPeca(new Peca(i, 6, Cor.BRANCA, Tipo.PEAO));
         }
     }
 }

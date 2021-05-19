@@ -1,7 +1,7 @@
 package testes;
 
-public class moveInvalidoException extends Exception {
-    public moveInvalidoException() {
+public class MoveInvalidoException extends Exception {
+    public MoveInvalidoException() {
         super("Movimento inválido!");
     }
 }
