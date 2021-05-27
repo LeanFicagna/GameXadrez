@@ -6,7 +6,11 @@ import pecas.Tipo;
 import tabuleiro.Tabuleiro;
 
 public class Init {
-    public Init(Tabuleiro tabuleiro) {
+    public Init() {
+
+    }
+
+    public static void init(Tabuleiro tabuleiro) {
         // Init Pretas
         tabuleiro.setPeca(new Peca(0, 0, Cor.PRETA, Tipo.TORRE));
         tabuleiro.setPeca(new Peca(1, 0, Cor.PRETA, Tipo.CAVALO));

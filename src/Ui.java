@@ -25,7 +25,8 @@ public class Ui {
         // TODO code application logic here
         System.out.flush();
         Tabuleiro tabuleiro = new Tabuleiro();
-        Init init = new Init(tabuleiro);
+        Init.init(tabuleiro);
+        
         boolean jogo = true;
         int vez = 1;
 
@@ -35,11 +36,11 @@ public class Ui {
             printTabuleiro(tabuleiro);
             System.out.print("Mover peça: ");
             temp = scanner.nextLine();
-            int x = (int)temp.toUpperCase().charAt(0) - 65, y = (int)temp.charAt(1) - 48;
+            int x = (int)temp.toUpperCase().charAt(0) - 65, y = (int)temp.charAt(1) - 47;
 
             System.out.print("Para: ");
             temp = scanner.nextLine();
-            int l = (int)temp.toUpperCase().charAt(0) - 65, c = (int)temp.charAt(1) - 48;
+            int l = (int)temp.toUpperCase().charAt(0) - 65, c = (int)temp.charAt(1) - 47;
             try {
                 Peca peca = Tabuleiro.getPeca(x, y);
                 System.out.println(IsValidMove.isValid(peca, l, c));
@@ -56,10 +57,10 @@ public class Ui {
         for(int i = 0; i < tabuleiro.getTabuleiro().length; i++) {
             System.out.print((i+1) + " ");
             for(int j = 0; j < tabuleiro.getTabuleiro()[0].length; j++) {
-                System.out.print(Tabuleiro.getPeca(j, i) != null? Tabuleiro.getPeca(j, i).toString(): " ");
+                System.out.print(Tabuleiro.getPeca(j, i) != null? Tabuleiro.getPeca(j, i).toString() + " ": "  ");
             }
             System.out.println();
         }
-        System.out.println("  ABCDEFGH");
+        System.out.println("  A B C D E F G H");
     }
 }
