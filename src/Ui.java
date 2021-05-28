@@ -1,6 +1,7 @@
 import tabuleiro.*;
 import testes.IsValidMove;
 import jogo.*;
+import pecas.Cor;
 import pecas.Peca;
 
 import java.util.Scanner;
@@ -32,7 +33,7 @@ public class Ui {
 
         while(jogo) {
             String temp;
-            System.out.println("Round: " + vez++);
+            System.out.println("Round: " + vez);
             printTabuleiro(tabuleiro);
             System.out.print("Mover peça: ");
             temp = scanner.nextLine();
@@ -44,12 +45,12 @@ public class Ui {
             try {
                 Peca peca = Tabuleiro.getPeca(x, y);
                 System.out.println(IsValidMove.isValid(peca, l, c));
-                if(IsValidMove.isValid(peca, l, c))
+                if(IsValidMove.isValid(peca, l, c) && ((peca.getCor() == Cor.BRANCA && vez % 2 == 1) || (peca.getCor() == Cor.PRETA && vez % 2 == 0)))
                     tabuleiro.movePeca(peca, l, c);
             } catch(BordaException e) {
                 System.err.println("erro: " + e);
             }
-            
+            vez++;
         }
     }
     
